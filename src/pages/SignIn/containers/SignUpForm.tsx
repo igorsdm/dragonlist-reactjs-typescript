@@ -1,5 +1,6 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 import { Input } from '../../../components/Input'
 import { Button } from '../../../components/Button'
@@ -37,6 +38,7 @@ export const SignUpForm: FC<Attributes> = ({ signUpForm, setSignUpForm }) => {
     if (success) {
       setSignUpError(false)
       setSignUpForm(false)
+      toast.success('Usuário criado com sucesso! Faça seu login!')
     } else {
       setSignUpError(true)
     }
