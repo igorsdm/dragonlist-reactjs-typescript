@@ -1,31 +1,11 @@
-import {
-  useState,
-  createContext,
-  ReactNode,
-  useCallback,
-  useContext,
-} from 'react'
+import { useState, createContext, useCallback, useContext } from 'react'
 import { findIndex, concat } from 'lodash'
 
-interface ListProvider {
-  children: ReactNode
-}
+import { AppContextProvider, Children, User } from '../interfaces'
 
-interface AppContextProvider {
-  token: string
-  signIn: (password: string, email: string) => boolean
-  signUp: (name: string, email: string, password: string) => boolean
-  signOut: () => void
-}
-
-interface User {
-  email: string
-  password: string
-  name: string
-}
 const AppContext = createContext<AppContextProvider>({} as AppContextProvider)
 
-export const AppProvider: React.FC = ({ children }: ListProvider) => {
+export const AppProvider = ({ children }: Children) => {
   const [token, setToken] = useState<string>(() => {
     const storageToken = localStorage.getItem('dragonsList:token')
 

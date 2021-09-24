@@ -9,16 +9,14 @@ import Routes from './routes'
 
 import 'react-toastify/dist/ReactToastify.css'
 
-export const App: React.FC = () => {
+export const App = () => {
   return (
     <>
       <ToastContainer position="top-right" autoClose={3000} />
       <Router>
         <AppProvider>
           <WithAxios>
-            <main>
-              <Routes />
-            </main>
+            <Routes />
           </WithAxios>
         </AppProvider>
         <GlobalStyle />

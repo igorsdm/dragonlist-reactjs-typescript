@@ -21,14 +21,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(
+    /* background: linear-gradient(
     135deg,
     rgba(129, 221, 146, 1) 0%,
     rgba(58, 178, 163, 1) 100%
-  );
+    ); */
 
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
+    background: #2e2e2e;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
 
 }
 

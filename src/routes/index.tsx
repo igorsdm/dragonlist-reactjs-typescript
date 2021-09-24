@@ -5,7 +5,7 @@ import { List } from '../pages/List'
 
 import Route from './Route'
 
-const Routes: React.FC = () => (
+const Routes = () => (
   <Switch>
     <Route path="/" exact component={SignIn} />
     <Route path="/list" component={List} isPrivate />
