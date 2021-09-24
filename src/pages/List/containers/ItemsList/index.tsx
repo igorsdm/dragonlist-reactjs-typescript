@@ -1,4 +1,5 @@
 import { Dispatch, FC, SetStateAction, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { Button } from '../../../../components/Button'
@@ -33,7 +34,11 @@ export const ItemsList: FC<Attributes> = ({ dragonList }) => {
           <Item />
         </ScrollY>
       </Body>
-      <Footer>Texto Aqui</Footer>
+      <Footer>
+        <Link to="/nowhere">
+          <Button colorScheme="default">Novo</Button>
+        </Link>
+      </Footer>
     </>
   )
 }

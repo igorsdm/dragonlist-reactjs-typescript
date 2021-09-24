@@ -1,22 +1,8 @@
-import { ComponentType, FC } from 'react'
-import {
-  RouteProps as ReactDOMRouteProps,
-  Route as ReactDOMRoute,
-  Redirect,
-} from 'react-router-dom'
+import { Route as ReactDOMRoute, Redirect } from 'react-router-dom'
 
 import { useAuth } from '../context/AppContext'
 
-interface RouteProps extends ReactDOMRouteProps {
-  isPrivate?: boolean
-  component: ComponentType
-}
-
-const Route: FC<RouteProps> = ({
-  isPrivate = false,
-  component: Component,
-  ...rest
-}) => {
+const Route = ({ isPrivate = false, component: Component, ...rest }) => {
   const { token } = useAuth()
 
   return (
