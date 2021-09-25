@@ -28,5 +28,5 @@ export const WithAxios = ({ children }: Children) => {
     )
   }, [signOut])
 
-  return <main>{children}</main>
+  return <>{children}</>
 }

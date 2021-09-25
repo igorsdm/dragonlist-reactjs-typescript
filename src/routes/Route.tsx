@@ -1,8 +1,24 @@
-import { Route as ReactDOMRoute, Redirect } from 'react-router-dom'
+import { ComponentType } from 'react'
+import {
+  RouteProps as ReactDOMRouteProps,
+  Route as ReactDOMRoute,
+  Redirect,
+} from 'react-router-dom'
+
+import { Layout } from '../pages/_layout'
 
 import { useAuth } from '../context/AppContext'
 
-const Route = ({ isPrivate = false, component: Component, ...rest }) => {
+interface RouteProps extends ReactDOMRouteProps {
+  isPrivate?: boolean
+  component: ComponentType
+}
+
+const Route = ({
+  isPrivate = false,
+  component: Component,
+  ...rest
+}: RouteProps) => {
   const { token } = useAuth()
 
   return (
@@ -10,7 +26,9 @@ const Route = ({ isPrivate = false, component: Component, ...rest }) => {
       {...rest}
       render={({ location }) => {
         return isPrivate === !!token ? (
-          <Component />
+          <Layout>
+            <Component />
+          </Layout>
         ) : (
           <Redirect
             to={{

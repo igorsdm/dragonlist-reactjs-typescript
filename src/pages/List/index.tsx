@@ -1,14 +1,16 @@
 import { useState, FC, useEffect } from 'react'
 
-import { ItemsList } from './containers/ItemsList'
-
-import { Content, Card, Loading, CustomLoader } from './styles'
+import { Link } from 'react-router-dom'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { api } from '../../services/api'
 
-export const List: FC = () => {
-  const [loading, setLoading] = useState(true)
+import { Button } from '../../components/Button'
+import { Body, Footer } from '../_layout/styles'
 
+import { ScrollY, Item } from './styles'
+
+export const List = () => {
   useEffect(() => {
     const getData = async () => {
       const res = await api.get('/dragon')
@@ -16,20 +18,34 @@ export const List: FC = () => {
       return res
     }
 
-    getData().then(response => setLoading(false))
+    getData()
   }, [])
 
   return (
-    <Content>
-      <Card>
-        {!loading ? (
-          <ItemsList dragonList={[]} />
-        ) : (
-          <Loading>
-            <CustomLoader />
-          </Loading>
-        )}
-      </Card>
-    </Content>
+    <>
+      <Body>
+        <ScrollY>
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+        </ScrollY>
+      </Body>
+      <Footer>
+        <Link to="/nowhere">
+          <Button colorScheme="default">Novo</Button>
+        </Link>
+      </Footer>
+    </>
   )
 }

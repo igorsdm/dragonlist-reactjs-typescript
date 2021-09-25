@@ -21,12 +21,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    /* background: linear-gradient(
-    135deg,
-    rgba(129, 221, 146, 1) 0%,
-    rgba(58, 178, 163, 1) 100%
-    ); */
-
     background: #2e2e2e;
     color: #fff;
     -webkit-font-smoothing: antialiased;
@@ -45,20 +39,4 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    height: 100vh;
-
-    & > div {
-      max-width: 500px;
-      padding: 2rem;
-      height: 100%;
-      width: 100%;
-    }
- }
-
 `
