@@ -1,12 +1,6 @@
-import { ButtonHTMLAttributes, FC } from 'react'
-import { IconBaseProps } from 'react-icons'
-
 import { StyledButton } from './styles'
 
-interface ButtonIconProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon: React.ComponentType<IconBaseProps>
-  color: string
-}
+import { ButtonIconProps } from '../../interfaces/components'
 
 export const ButtonIcon = ({ icon: Icon, color, ...rest }: ButtonIconProps) => (
   <StyledButton type="button" {...rest}>

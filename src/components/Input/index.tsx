@@ -1,16 +1,10 @@
-import { useState, useCallback, InputHTMLAttributes, FC } from 'react'
+import { useState, useCallback } from 'react'
 
-import { UseFormRegister } from 'react-hook-form'
 import { FiAlertCircle } from 'react-icons/fi'
 
 import { Container, Error } from './styles'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  error: Record<string, any>
-  register: UseFormRegister<any>
-  rules: Record<string, unknown>
-  name: string
-}
+import { InputProps } from '../../interfaces/components'
 
 export const Input = ({
   name,

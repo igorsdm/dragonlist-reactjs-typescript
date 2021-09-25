@@ -1,18 +1,10 @@
-import { ComponentType } from 'react'
-import {
-  RouteProps as ReactDOMRouteProps,
-  Route as ReactDOMRoute,
-  Redirect,
-} from 'react-router-dom'
+import { Route as ReactDOMRoute, Redirect } from 'react-router-dom'
 
 import { Layout } from '../pages/_layout'
 
 import { useAuth } from '../context/AppContext'
 
-interface RouteProps extends ReactDOMRouteProps {
-  isPrivate?: boolean
-  component: ComponentType
-}
+import { RouteProps } from '../interfaces/components'
 
 const Route = ({
   isPrivate = false,

@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import { shade } from 'polished'
 
-interface ButtonProps {
-  colorScheme: string
-}
+import { ButtonProps } from '../../interfaces/styles'
 
 export const Container = styled.button<ButtonProps>`
   background: ${({ colorScheme }) =>

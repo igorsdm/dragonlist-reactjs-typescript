@@ -1,12 +1,8 @@
-import { FC } from 'react'
 import { Container } from './styles'
 
-interface TooltipProps {
-  title: string
-  className?: string
-}
+import { TooltipProps } from '../../interfaces/components'
 
-export const Tooltip: FC<TooltipProps> = ({ title, children, className }) => {
+export const Tooltip = ({ title, children, className }: TooltipProps) => {
   return (
     <Container className={className}>
       {children}

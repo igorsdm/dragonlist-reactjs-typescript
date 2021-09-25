@@ -1,14 +1,13 @@
-import { useState, useEffect } from 'react'
-
 import { MainContainer, Card, Header, Loading, CustomLoader } from './styles'
 
-import { Children } from '../../interfaces'
+import { Children } from '../../interfaces/components'
 
-import { useAuth } from '../../context/AppContext'
+import { useAuth, useLoader } from '../../context/AppContext'
 
 export const Layout = ({ children }: Children) => {
   const { token } = useAuth()
-  const [loading, setLoading] = useState(false)
+  const { loading } = useLoader()
+
   return (
     <MainContainer>
       {!token ? (
@@ -19,9 +18,8 @@ export const Layout = ({ children }: Children) => {
             <Header>
               <h1>Dragons List</h1>
             </Header>
-            {!loading ? (
-              children
-            ) : (
+            {children}
+            {loading && (
               <Loading>
                 <CustomLoader />
               </Loading>

@@ -1,16 +1,25 @@
 import { useState, createContext, useCallback, useContext } from 'react'
 import { findIndex, concat } from 'lodash'
 
-import { AppContextProvider, Children, User } from '../interfaces'
+import {
+  AppContextProvider,
+  UseAuth,
+  UseLoader,
+  User,
+} from '../interfaces/context'
+
+import { Children } from '../interfaces/components'
 
 const AppContext = createContext<AppContextProvider>({} as AppContextProvider)
 
 export const AppProvider = ({ children }: Children) => {
-  const [token, setToken] = useState<string>(() => {
+  const [token, setToken] = useState(() => {
     const storageToken = localStorage.getItem('dragonsList:token')
 
     return storageToken || ''
   })
+
+  const [loading, setLoading] = useState(false)
 
   const [usersListFromBackEnd, setUsersListFromBackEnd] = useState<User[]>(
     () => {
@@ -81,14 +90,22 @@ export const AppProvider = ({ children }: Children) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{ token, signIn, signUp, signOut }}>
+    <AppContext.Provider
+      value={{ token, loading, signIn, signUp, signOut, setLoading }}
+    >
       {children}
     </AppContext.Provider>
   )
 }
 
-export const useAuth = (): AppContextProvider => {
-  const context = useContext(AppContext)
+export const useAuth = (): UseAuth => {
+  const { signIn, signOut, signUp, token } = useContext(AppContext)
 
-  return context
+  return { signIn, signOut, signUp, token }
+}
+
+export const useLoader = (): UseLoader => {
+  const { loading, setLoading } = useContext(AppContext)
+
+  return { loading, setLoading }
 }

@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { DisplayProps } from '../../interfaces/styles'
+
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,14 +44,14 @@ export const Header = styled.div`
   grid-area: header;
 `
 
-export const Body = styled.div`
-  display: flex;
+export const Body = styled.div<DisplayProps>`
+  display: ${({ show }) => (show ? 'flex' : 'none')};
   flex-direction: column;
   grid-area: body;
 `
 
-export const Footer = styled.div`
-  display: flex;
+export const Footer = styled.div<DisplayProps>`
+  display: ${({ show }) => (show ? 'flex' : 'none')};
   flex-direction: column;
   grid-area: footer;
 `

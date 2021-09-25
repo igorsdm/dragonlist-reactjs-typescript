@@ -1,10 +1,6 @@
-import { ButtonHTMLAttributes, FC } from 'react'
-
 import { Container } from './styles'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  colorScheme: string
-}
+import { ButtonProps } from '../../interfaces/components'
 
 export const Button = ({ children, colorScheme, ...rest }: ButtonProps) => (
   <Container colorScheme={colorScheme} {...rest}>

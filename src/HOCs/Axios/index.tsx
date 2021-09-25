@@ -2,16 +2,23 @@ import { useMemo } from 'react'
 import { toast } from 'react-toastify'
 
 import { api } from '../../services/api'
-import { useAuth } from '../../context/AppContext'
+import { useAuth, useLoader } from '../../context/AppContext'
 
-import { Children } from '../../interfaces'
+import { Children } from '../../interfaces/components'
 
 export const WithAxios = ({ children }: Children) => {
   const { signOut } = useAuth()
+  const { setLoading } = useLoader()
 
   useMemo(() => {
+    api.interceptors.request.use(request => {
+      setLoading(true)
+      return request
+    })
+
     api.interceptors.response.use(
       response => {
+        setLoading(false)
         return response
       },
       error => {
@@ -24,9 +31,10 @@ export const WithAxios = ({ children }: Children) => {
             'Houve um problema com a sua solicitação, tente novamente mais tarde'
           )
         }
+        setLoading(false)
       }
     )
-  }, [signOut])
+  }, [signOut, setLoading])
 
   return <>{children}</>
 }

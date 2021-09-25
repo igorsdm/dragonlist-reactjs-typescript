@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useState } from 'react'
+import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { Input } from '../../../components/Input'
@@ -8,27 +8,19 @@ import { useAuth } from '../../../context/AppContext'
 
 import { LinkSpan, ErrorSpan } from '../styles'
 
-interface Inputs {
-  email: string
-  password: string
-}
+import { SignInInputs, SignUpProps } from '../../../interfaces/components'
 
-interface Attributes {
-  signUpForm: boolean
-  setSignUpForm: Dispatch<SetStateAction<boolean>>
-}
-
-export const SignInForm: FC<Attributes> = ({ signUpForm, setSignUpForm }) => {
+export const SignInForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
   const [signInError, setSignInError] = useState(false)
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Inputs>()
+  } = useForm<SignInInputs>()
 
   const { signIn } = useAuth()
 
-  const onSubmit: SubmitHandler<Inputs> = data => {
+  const onSubmit: SubmitHandler<SignInInputs> = data => {
     const { email, password } = data
 
     const success = signIn(email, password)

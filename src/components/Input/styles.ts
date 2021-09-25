@@ -2,12 +2,9 @@ import styled, { css } from 'styled-components'
 
 import { Tooltip } from '../Tooltip'
 
-interface ContainerProps {
-  isFocused: boolean
-  isErrored: boolean
-}
+import { InputProps } from '../../interfaces/styles'
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.div<InputProps>`
   display: flex;
   align-items: center;
 
