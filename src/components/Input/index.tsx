@@ -6,18 +6,19 @@ import { FiAlertCircle } from 'react-icons/fi'
 import { Container, Error } from './styles'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  error?: Record<string, any>
+  error: Record<string, any>
   register: UseFormRegister<any>
   rules: Record<string, unknown>
+  name: string
 }
 
-export const Input: FC<InputProps> = ({
+export const Input = ({
   name,
   error,
   register,
   rules,
   ...rest
-}) => {
+}: InputProps) => {
   const [isFocused, setIsFocused] = useState(false)
 
   const handleInputFocus = useCallback(() => {

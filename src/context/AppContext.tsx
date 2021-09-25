@@ -14,11 +14,13 @@ export const AppProvider = ({ children }: Children) => {
 
   const [usersListFromBackEnd, setUsersListFromBackEnd] = useState<User[]>(
     () => {
-      const storageUsersList = JSON.parse(
-        localStorage.getItem('dragonsList:userList')
-      )
+      const userList = localStorage.getItem('dragonsList:userList')
 
-      return storageUsersList || []
+      if (typeof userList === 'string') {
+        return JSON.parse(userList)
+      }
+
+      return []
     }
   )
 
