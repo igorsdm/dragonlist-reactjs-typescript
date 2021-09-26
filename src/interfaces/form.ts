@@ -8,3 +8,9 @@ export interface SignUpInputs {
   email: string
   password: string
 }
+
+export interface AddEditInputs {
+  name: string
+  type: string
+  avatar: string
+}

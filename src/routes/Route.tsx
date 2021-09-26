@@ -24,7 +24,7 @@ const Route = ({
         ) : (
           <Redirect
             to={{
-              pathname: isPrivate ? '/' : '/list',
+              pathname: isPrivate ? '/' : '/lista',
               state: { from: props.location },
             }}
           />

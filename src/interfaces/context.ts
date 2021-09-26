@@ -13,9 +13,3 @@ export type UseLoader = Omit<
   AppContextProvider,
   'token' | 'signIn' | 'signUp' | 'signOut'
 >
-
-export interface User {
-  email: string
-  password: string
-  name: string
-}

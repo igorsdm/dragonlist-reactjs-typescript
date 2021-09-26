@@ -47,6 +47,7 @@ export const Container = styled.div<InputProps>`
 export const Error = styled(Tooltip)`
   height: 1.5rem;
   margin-left: 1rem;
+  text-align: center;
 
   svg {
     margin: 0;

@@ -6,3 +6,9 @@ export interface Dragon {
   id: number
   avatar?: string
 }
+
+export interface User {
+  email: string
+  password: string
+  name: string
+}

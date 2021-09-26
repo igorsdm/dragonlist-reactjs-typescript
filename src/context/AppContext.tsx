@@ -1,12 +1,9 @@
 import { useState, createContext, useCallback, useContext } from 'react'
 import { findIndex, concat } from 'lodash'
 
-import {
-  AppContextProvider,
-  UseAuth,
-  UseLoader,
-  User,
-} from '../interfaces/context'
+import { AppContextProvider, UseAuth, UseLoader } from '../interfaces/context'
+
+import { User } from '../interfaces/dto'
 
 import { Children } from '../interfaces/components'
 

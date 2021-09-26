@@ -63,7 +63,7 @@ export const List = () => {
                     <Link
                       style={{ textDecoration: 'none' }}
                       to={{
-                        pathname: '/dragon',
+                        pathname: '/dragao',
                         state: { dragonId: dragon.id },
                       }}
                     >
@@ -102,7 +102,7 @@ export const List = () => {
         </ScrollY>
       </Body>
       <Footer show={!loading}>
-        <Link to="/nowhere">
+        <Link to="/novo">
           <Button colorScheme="default">Novo</Button>
         </Link>
       </Footer>

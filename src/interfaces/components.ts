@@ -44,6 +44,11 @@ export interface SignUpProps {
   signUpForm: boolean
   setSignUpForm: Dispatch<SetStateAction<boolean>>
 }
+
+export interface AddDragon {
+  errors: Record<string, any>
+  register: UseFormRegister<any>
+}
 export interface TooltipProps {
   title: string
   className?: string

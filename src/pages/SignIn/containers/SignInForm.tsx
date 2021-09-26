@@ -46,7 +46,6 @@ export const SignInForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
               message: 'Valor informado não parece ser um e-mail válido',
             },
           }}
-          defaultValue=""
           error={errors}
           placeholder="Digite seu e-mail"
           autoComplete="off"
@@ -61,11 +60,10 @@ export const SignInForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
               message: 'Este campo é obrigatório',
             },
           }}
-          defaultValue=""
           error={errors}
           placeholder="Digite sua senha"
           type="password"
-          autoComplete="new-password"
+          autoComplete="off"
         />
         <Button colorScheme="default" type="submit">
           <span>Entrar</span>
