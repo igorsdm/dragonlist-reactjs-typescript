@@ -38,9 +38,21 @@ export const Card = styled.div`
 
 export const Header = styled.div`
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   grid-area: header;
+  width: 100%;
+
+  h1 {
+    margin-right: 0.5rem;
+  }
+
+  svg {
+    position: absolute;
+    right: 1rem;
+    top: 30%;
+  }
 `
 
 export const Body = styled.div<DisplayProps>`
@@ -53,6 +65,8 @@ export const Footer = styled.div<DisplayProps>`
   display: ${({ show }) => (show ? 'flex' : 'none')};
   flex-direction: column;
   grid-area: footer;
+  width: 80%;
+  margin: 0 auto;
 `
 
 export const Loading = styled.div`

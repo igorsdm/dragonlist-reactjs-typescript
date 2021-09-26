@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { toast } from 'react-toastify'
 
@@ -9,7 +8,8 @@ import { useAuth } from '../../../context/AppContext'
 
 import { LinkSpan } from '../styles'
 
-import { SignUpInputs, SignUpProps } from '../../../interfaces/components'
+import { SignUpProps } from '../../../interfaces/components'
+import { SignUpInputs } from '../../../interfaces/form'
 
 export const SignUpForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
   const {
@@ -87,13 +87,7 @@ export const SignUpForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
           <span>Cadastrar</span>
         </Button>
       </form>
-      <LinkSpan
-        onClick={() => setSignUpForm(!signUpForm)}
-        onKeyPress={() => setSignUpForm(!signUpForm)}
-        role="button"
-        style={{ cursor: 'pointer', marginTop: '1rem' }}
-        tabIndex={0}
-      >
+      <LinkSpan onClick={() => setSignUpForm(!signUpForm)}>
         Faça seu login!
       </LinkSpan>
     </>

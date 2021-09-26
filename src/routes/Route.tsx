@@ -16,16 +16,16 @@ const Route = ({
   return (
     <ReactDOMRoute
       {...rest}
-      render={({ location }) => {
+      render={props => {
         return isPrivate === !!token ? (
           <Layout>
-            <Component />
+            <Component {...props} />
           </Layout>
         ) : (
           <Redirect
             to={{
               pathname: isPrivate ? '/' : '/list',
-              state: { from: location },
+              state: { from: props.location },
             }}
           />
         )

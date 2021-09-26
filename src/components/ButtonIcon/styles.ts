@@ -6,7 +6,7 @@ export const StyledButton = styled.button`
 
   &:hover {
     svg {
-      @media (min-width: 1080px) {
+      @media (min-width: 720px) {
         height: 1.7rem;
         width: 1.7rem;
       }

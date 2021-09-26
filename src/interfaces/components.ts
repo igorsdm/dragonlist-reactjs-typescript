@@ -8,7 +8,10 @@ import {
 } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 
-import { RouteProps as ReactDOMRouteProps } from 'react-router-dom'
+import {
+  RouteProps as ReactDOMRouteProps,
+  RouteComponentProps,
+} from 'react-router-dom'
 import { IconBaseProps } from 'react-icons'
 
 export interface Children {
@@ -17,7 +20,7 @@ export interface Children {
 
 export interface RouteProps extends ReactDOMRouteProps {
   isPrivate?: boolean
-  component: ComponentType
+  component: ComponentType<RouteComponentProps>
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -37,24 +40,12 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string
 }
 
+export interface SignUpProps {
+  signUpForm: boolean
+  setSignUpForm: Dispatch<SetStateAction<boolean>>
+}
 export interface TooltipProps {
   title: string
   className?: string
   children: ReactNode
-}
-
-export interface SignInInputs {
-  email: string
-  password: string
-}
-
-export interface SignUpInputs {
-  name: string
-  email: string
-  password: string
-}
-
-export interface SignUpProps {
-  signUpForm: boolean
-  setSignUpForm: Dispatch<SetStateAction<boolean>>
 }

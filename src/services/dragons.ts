@@ -7,3 +7,15 @@ export const getDragonsList = async () => {
 
   return res.data
 }
+
+export const deleteDragonById = async (dragonId: number) => {
+  const res = await api.delete(`/dragon/${dragonId}`)
+
+  return res.data
+}
+
+export const getDragonById = async (dragonId: number) => {
+  const res = await api.get(`/dragon/${dragonId}`)
+
+  return res.data
+}

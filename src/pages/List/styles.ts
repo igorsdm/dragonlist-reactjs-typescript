@@ -20,13 +20,13 @@ export const ScrollY = styled.div`
 export const DragonContainer = styled.div`
   display: flex;
   align-items: center;
-  flex: 0 0 auto;
-  background-color: rgba(255, 255, 255, 0.1);
-  margin: 0.5rem 0;
   height: 6rem;
+
+  margin: 0.5rem 0;
   margin-right: 0.5rem;
   border-radius: 5px;
 
+  background-color: rgba(255, 255, 255, 0.1);
   img {
     margin-right: 1.5rem;
     margin-left: 0.5rem;
@@ -34,5 +34,32 @@ export const DragonContainer = styled.div`
     width: 4rem;
 
     border-radius: 50%;
+  }
+`
+export const Content = styled.div`
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  a {
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const Actions = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 1rem;
+
+  svg {
+    margin-left: 0.5rem;
   }
 `
