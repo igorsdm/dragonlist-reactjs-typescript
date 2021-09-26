@@ -9,7 +9,7 @@ export const Layout = ({ children }: Children) => {
   const { loading } = useLoader()
 
   return (
-    <MainContainer>
+    <MainContainer signIn={!token}>
       {!token ? (
         children
       ) : (

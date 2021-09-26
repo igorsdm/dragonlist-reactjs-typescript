@@ -7,12 +7,11 @@ import { Button } from '../../../components/Button'
 
 import { useAuth } from '../../../context/AppContext'
 
-import { ErrorSpan, LinkSpan } from '../styles'
+import { LinkSpan } from '../styles'
 
 import { SignUpInputs, SignUpProps } from '../../../interfaces/components'
 
 export const SignUpForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
-  const [signUpError, setSignUpError] = useState(false)
   const {
     register,
     handleSubmit,
@@ -27,11 +26,10 @@ export const SignUpForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
     const success = signUp(name, email, password)
 
     if (success) {
-      setSignUpError(false)
       setSignUpForm(false)
       toast.success('Usuário criado com sucesso! Faça seu login!')
     } else {
-      setSignUpError(true)
+      toast.error('Houve um problema com o seu cadastro, tente novamente!')
     }
   }
 
@@ -98,11 +96,6 @@ export const SignUpForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
       >
         Faça seu login!
       </LinkSpan>
-      {signUpError && (
-        <ErrorSpan>
-          Houve um problema com o seu cadastro, tente novamente!
-        </ErrorSpan>
-      )}
     </>
   )
 }

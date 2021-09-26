@@ -22,13 +22,13 @@ export const Container = styled.div<InputProps>`
   ${props =>
     props.isErrored &&
     css`
-      border-color: #c53030;
+      border-color: #cf1020;
     `}
 
   ${props =>
     props.isFocused &&
     css`
-      border-color: rgba(47, 110, 181, 1);
+      border-color: #e25822;
     `}
 
   input {
@@ -53,11 +53,11 @@ export const Error = styled(Tooltip)`
   }
 
   span {
-    background: #c53030;
+    background: #cf1020;
     color: #fff;
 
     &::before {
-      border-color: #c53030 transparent;
+      border-color: transparent;
     }
   }
 `

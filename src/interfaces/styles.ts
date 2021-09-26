@@ -2,6 +2,10 @@ export interface DisplayProps {
   show: boolean
 }
 
+export interface SignedProps {
+  signIn: boolean
+}
+
 export interface ButtonProps {
   colorScheme: string
 }

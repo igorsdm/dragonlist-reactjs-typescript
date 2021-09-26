@@ -21,10 +21,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #2e2e2e;
     color: #fff;
     -webkit-font-smoothing: antialiased;
-
+    background: #483c32;
 }
 
   body, input, textarea, button {

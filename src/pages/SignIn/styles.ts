@@ -10,12 +10,6 @@ export const Container = styled.div`
     margin-bottom: 2rem;
   }
 `
-
-export const ErrorSpan = styled.span`
-  color: #c53030;
-  margin-top: 2rem;
-`
-
 export const LinkSpan = styled.span`
   cursor: pointer;
   margin-top: 1rem;

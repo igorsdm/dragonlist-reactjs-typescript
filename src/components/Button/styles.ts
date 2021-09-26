@@ -5,7 +5,7 @@ import { ButtonProps } from '../../interfaces/styles'
 
 export const Container = styled.button<ButtonProps>`
   background: ${({ colorScheme }) =>
-    colorScheme === 'default' ? 'rgba(47, 110, 181, 1)' : '#c53030'};
+    colorScheme === 'default' ? '#e25822' : '#cf1020'};
   color: #fff;
   height: 3rem;
   border-radius: 10px;
@@ -18,9 +18,6 @@ export const Container = styled.button<ButtonProps>`
 
   &:hover {
     background: ${({ colorScheme }) =>
-      shade(
-        0.2,
-        colorScheme === 'default' ? 'rgba(47, 110, 181, 1)' : '#c53030'
-      )};
+      shade(0.2, colorScheme === 'default' ? '#e25822' : '#cf1020')};
   }
 `

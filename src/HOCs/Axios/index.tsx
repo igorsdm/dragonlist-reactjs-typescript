@@ -31,7 +31,6 @@ export const WithAxios = ({ children }: Children) => {
             'Houve um problema com a sua solicitação, tente novamente mais tarde'
           )
         }
-        setLoading(false)
       }
     )
   }, [signOut, setLoading])

@@ -1,17 +1,17 @@
 import { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
+import { toast } from 'react-toastify'
 import { Input } from '../../../components/Input'
 import { Button } from '../../../components/Button'
 
 import { useAuth } from '../../../context/AppContext'
 
-import { LinkSpan, ErrorSpan } from '../styles'
+import { LinkSpan } from '../styles'
 
 import { SignInInputs, SignUpProps } from '../../../interfaces/components'
 
 export const SignInForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
-  const [signInError, setSignInError] = useState(false)
   const {
     register,
     handleSubmit,
@@ -26,7 +26,9 @@ export const SignInForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
     const success = signIn(email, password)
 
     if (!success) {
-      setSignInError(true)
+      toast.error(
+        'O e-mail ou a senha que você digitou não foram encontrados! Verifique e tente novamente!'
+      )
     }
   }
 
@@ -77,12 +79,6 @@ export const SignInForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
       >
         Não possuí um conta? Crie uma aqui!
       </LinkSpan>
-      {signInError && (
-        <ErrorSpan>
-          O e-mail ou a senha que você digitou não foram encontrados! Verifique
-          e tente novamente!
-        </ErrorSpan>
-      )}
     </>
   )
 }

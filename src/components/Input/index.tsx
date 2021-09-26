@@ -33,7 +33,7 @@ export const Input = ({
       />
       {!!error[name] && (
         <Error title={error[name].message}>
-          <FiAlertCircle color="#c53030" size={20} />
+          <FiAlertCircle color="#cf1020" size={20} />
         </Error>
       )}
     </Container>
