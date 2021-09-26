@@ -25,7 +25,7 @@ export const Card = styled.div`
   width: 100%;
   height: 100%;
   grid-template-columns: 100%;
-  grid-template-rows: 10% 65% 25%;
+  grid-template-rows: 5rem calc(100% - 15rem) 10rem;
   grid-template-areas:
     'header'
     'body'
@@ -51,7 +51,7 @@ export const Header = styled.div`
   svg {
     position: absolute;
     right: 1rem;
-    top: 30%;
+    top: 40%;
   }
 `
 
