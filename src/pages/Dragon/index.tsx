@@ -38,7 +38,7 @@ export const DragonInfo = (props: any) => {
     if (createdAt) {
       date = format(
         new Date(Date.parse(dragonInfo.createdAt)),
-        "dd/MM/yyyy 'às' hh:mm",
+        "dd/MM/yyyy 'às'  HH:mm'h'",
         {
           locale: ptBR,
         }

@@ -44,10 +44,6 @@ export const editDragon = async (
 ) => {
   const data = { name, avatar, type }
 
-  Object.keys(data).forEach(key => {
-    if ((data as any)[key] === '') delete (data as any)[key]
-  })
-
   const res = await api.put(`/dragon/${dragonId}`, data)
 
   return res
