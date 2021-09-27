@@ -27,7 +27,7 @@ export const DragonInfo = (props: any) => {
   const [dragonInfo, setDragonInfo] = useState<Dragon>({} as Dragon)
 
   const handleGetDragon = useCallback(async id => {
-    return getDragonById(id).then(response => setDragonInfo(response))
+    return getDragonById(id).then(response => setDragonInfo(response.data))
   }, [])
 
   const formattedDate = useMemo(() => {

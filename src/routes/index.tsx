@@ -13,6 +13,7 @@ const Routes = () => (
     <Route path="/lista" component={List} isPrivate />
     <Route path="/dragao" component={DragonInfo} isPrivate />
     <Route path="/novo" component={AddEdit} isPrivate />
+    <Route path="/editar" component={AddEdit} isPrivate />
     <Route component={SignIn} />
   </Switch>
 )

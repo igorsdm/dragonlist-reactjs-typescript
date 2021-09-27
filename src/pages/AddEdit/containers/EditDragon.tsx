@@ -2,11 +2,11 @@ import { Input } from '../../../components/Input'
 import { AddDragon } from '../../../interfaces/components'
 import { Form } from '../styles'
 
-export const AddDragonForm = ({ register, errors }: AddDragon) => {
+export const EditDragonForm = ({ register, errors }: AddDragon) => {
   return (
     <>
       <Form>
-        <h2>Adicionar novo dragão</h2>
+        <h2>Editar dragão</h2>
         <Input
           name="name"
           register={register}

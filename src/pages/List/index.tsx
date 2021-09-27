@@ -24,7 +24,7 @@ export const List = () => {
   const handleGetDragonList = useCallback(async () => {
     setLoading(true)
     return getDragonsList().then(response => {
-      setDragonList(orderBy(response, 'name', 'asc'))
+      setDragonList(orderBy(response.data, 'name', 'asc'))
     })
   }, [setLoading])
 
@@ -71,18 +71,24 @@ export const List = () => {
                     </Link>
                   </Content>
                   <Actions>
-                    <ButtonIcon
-                      icon={GoPencil}
-                      color="#e25822"
-                      onClick={e => {
-                        e.stopPropagation()
+                    <Link
+                      style={{ textDecoration: 'none' }}
+                      to={{
+                        pathname: '/editar',
+                        state: { dragonId: dragon.id },
                       }}
-                    />
+                    >
+                      <ButtonIcon
+                        onClick={() => setLoading(true)}
+                        icon={GoPencil}
+                        color="#e25822"
+                      />
+                    </Link>
+
                     <ButtonIcon
                       icon={FiTrash2}
                       color="#e25822"
-                      onClick={e => {
-                        e.stopPropagation()
+                      onClick={() => {
                         handleDeleteDragon(dragon.id).finally(() =>
                           setLoading(false)
                         )

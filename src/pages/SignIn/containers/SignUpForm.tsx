@@ -43,7 +43,7 @@ export const SignUpForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
           rules={{
             required: { value: true, message: 'Este campo é obrigatório' },
             pattern: {
-              value: /^[a-zA-Z\s]+$/,
+              value: /^[A-zÀ-ú\s]+$/,
               message: 'Valor informado não parece ser um nome válido',
             },
           }}
@@ -65,7 +65,6 @@ export const SignUpForm = ({ signUpForm, setSignUpForm }: SignUpProps) => {
           placeholder="Digite seu e-mail"
           autoComplete="off"
         />
-
         <Input
           name="password"
           register={register}
