@@ -23,6 +23,10 @@ export const AddEdit = (props: any) => {
 
   const dragonId = location.state?.dragonId
 
+  if (location.pathname === '/editar' && !dragonId) {
+    history.push('/lista')
+  }
+
   const {
     register,
     handleSubmit,
@@ -60,6 +64,7 @@ export const AddEdit = (props: any) => {
       handleGetDragon(dragonId)
         .then(response => {
           setEditMode(true)
+
           const { name, type, avatar } = response.data
 
           reset({
