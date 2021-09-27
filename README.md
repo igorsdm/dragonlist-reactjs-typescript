@@ -2,7 +2,7 @@
 
 ## About
 
-Application done with ReactJS in Typescript using ContextApi to manage a dragon list. You can add, edit and remove dragons.If it is your first time using it, don't forget do register first! The application is fully responsive, so even in small devices you will we able to use it!
+Application done with ReactJS in Typescript using ContextApi to manage a dragon list. You can add, edit and remove dragons. If it is your first time using it, don't forget do register first! The application is fully responsive, so even in small devices you will we able to use it!
 
 ## Installation
 
